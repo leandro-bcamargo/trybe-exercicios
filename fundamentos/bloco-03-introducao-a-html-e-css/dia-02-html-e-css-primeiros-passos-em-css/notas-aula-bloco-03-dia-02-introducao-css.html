@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTC-8"
+    <title>Página teste</title>
+    <!-- Dentro desta tag estarão definidos todos os seletores para o estilo da página -->
+    <style> 
+        /* Dentro destas chaves estarão as  propriedades  que se quer estilizar para todos os elementos h4 */
+        h2 {
+            /* estiliza cor do texto */
+            color: green; 
+            /* Determina o tamanho da fonte utilizada naquele elemento. Pode ser em pixels ou em ems. Ems são uma medida de proporção -> 2em indica que a fonte será 2x maior do que a fonte default para aquele elemento */
+            font-size: 2em;
+        }
+            
+        /* '#' indica id, estabelece propriedades que serão aplicadas somente ao elementos que possui esse id único */
+        #extinct-species { 
+            background-color: red;
+
+        }
+
+        /* Note que tanto o seletor h4 quanto o seletor #description aplicam-se ao mesmo elemento. Nesse caso, prevalece o seletor que for aplicado por último, uma vez que ambas as propriedades serão aplicadas sucessivamente */
+        description { 
+            /* estabelece uma cor para o background de todo o corpo da página, definindo valores para red, green e blue respectivamente */
+            color: orange;
+        }
+
+        p {
+            /* Elenca as fontes que serão utilizadas para determinado elemento. Caso o computador não possua a primeira fonte indicada, a segunda é apresentada em seu lugar */
+            font-family: fantasy, sans-serif;
+            /* Distância horizontal entre as letras */
+            letter-spacing: normal;
+            /* "none" retira estilização de um texto */
+            text-decoration: none;
+        }
+
+        /* Dentro do seletor "body" estarão as propriedades que se quer estilizar para toda a página */
+        body { 
+            background-color: rgb(255,150,200); 
+            font-size: 20px;
+        }
+
+        /* "." indica a criação de uma classe, cujas propriedades serão aplicadas a todos os elementos que forem identificados por essa classe */
+        .list-style { 
+            background-color: blue;
+            color: white;
+            /* Faz com que a fonte fique com determinada espessura; no caso, negrito */
+            font-weight: bold;
+            /* Faz com que a fonte fique com determinado efeito; no caso, itálico */
+            font-style: italic;
+            /* Espaçamento entre linhas */
+            line-height: 40px;
+            /* Alinhamento do texto; no caso, centralizado */
+            text-align: center;
+            /* Decoração para o texto; no caso, sublinhado */
+            text-decoration: underline;
+            /* Espaço interno -> Espaçamento entre o texto e a borda do elemento */
+            padding: 10px;
+        }
+
+        .color-teal {
+            color: teal;
+        }
+
+        .picture {
+            /* Grau de arredondamento de uma imagem */
+            border-radius: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- cria um id único para este elemento, que poderá ser identificado por outros elementos que queiram referir-se a este elemento em particular -->
+    <p id="extinct-species"></p> 
+
+    <h2 id="description"></h2>
+    <!-- Note que, para aplicar mais de uma classe ao mesmo elemento, dá-se um espaço entre elas e mantém-se-nas dentro das aspas -->
+    <ul class="list-style color-teal">
+        <li></li>
+        <li></li>
+    </ul>
+
+    <ol class="list-style">
+        <li></li>
+        <li></li>
+    </ol>
+
+    <img class="picture" src="#.jpg" alt="foto">
+
+</body>
+</html>
