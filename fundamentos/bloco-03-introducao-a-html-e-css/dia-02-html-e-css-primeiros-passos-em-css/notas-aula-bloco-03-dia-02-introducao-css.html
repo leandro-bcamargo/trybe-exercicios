@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTC-8"
     <title>Página teste</title>
-    <!-- Dentro desta tag estarão definidos todos os seletores para o estilo da página -->
+    <!-- Dentro desta tag estarão definidos todos os seletores para o estilo da página. -->
     <style> 
         /* Dentro destas chaves estarão as  propriedades  que se quer estilizar para todos os elementos h4 */
         h2 {
@@ -73,8 +73,9 @@
 
     <!-- cria um id único para este elemento, que poderá ser identificado por outros elementos que queiram referir-se a este elemento em particular -->
     <p id="extinct-species"></p> 
-
-    <h2 id="description"></h2>
+    
+    <!-- Note que a estilização pode ser feita, também, inline, ou seja, dentro do próprio elemento que se quer estilizar. Para tanto, é preciso utilizar "style" como propriedade da tag em questão, bem como usar propriedade e valor como valor de "style". Trata-se, contudo, de uma prática não-recomendada. -->
+    <h2 id="description"> style="background-color: teal; font-family: verdana; "</h2>
     <!-- Note que, para aplicar mais de uma classe ao mesmo elemento, dá-se um espaço entre elas e mantém-se-nas dentro das aspas -->
     <ul class="list-style color-teal">
         <li></li>
@@ -90,3 +91,6 @@
 
 </body>
 </html>
+
+<!-- Outra forma de utilizar o CSS é criar um arquivo CSS separado e linkar esse arquivo ao arquivo HTML. Para tanto, usa-se, dentro da tag <head></head>:
+<link rel="stylesheet" type="text/css" href="style.css"> -->
