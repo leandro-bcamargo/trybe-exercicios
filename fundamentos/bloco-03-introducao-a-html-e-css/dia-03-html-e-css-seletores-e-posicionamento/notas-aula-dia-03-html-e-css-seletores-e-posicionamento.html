@@ -1,44 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercício de Fixação: box model</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício de Fixação: box model</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      body {
+        font-family: fantasy;
+        color: aquamarine;
+      }
       .cavalo-marinho {
-          color:blue;
+        color: blue;
+      }
+      
+      /* Agrupamento de seletores permite aplicar as mesmas propriedades a mais de um seletor */
+      p, div {
+          font-family: monospace;
       }
 
       .paragrafos {
-          background-color: royalblue;
-          /* Limita a largura do elemento. Se colocado em porcentagem, será relativa à largura total da janela do browser */
-          width: 500px;
-          /* Limita a altura do elemento. Se conteúdo não couber na largura especificada, haverá overflow e os elementos que se seguirem se sobreporão a esse conteúdo, gerando problemas na visualização */
-          height: 300px;
-          /* Determina o que ocorre com o conteúdo que não couber nas dimensões especificadas para o contâiner. O valor padrão é visível, porém pode-se ocultá-lo mudando-se o valor para "hidden". O valor "auto" faz com que se cria um scroll que permite a visualização de todo o texto dentro das dimensões especificadas.
+        background-color: royalblue;
+        /* Limita a largura do elemento. Se colocado em porcentagem, será relativa à largura total da janela do browser */
+        width: 500px;
+        /* Limita a altura do elemento. Se conteúdo não couber na largura especificada, haverá overflow e os elementos que se seguirem se sobreporão a esse conteúdo, gerando problemas na visualização */
+        height: 300px;
+        /* Determina o que ocorre com o conteúdo que não couber nas dimensões especificadas para o contâiner. O valor padrão é visível, porém pode-se ocultá-lo mudando-se o valor para "hidden". O valor "auto" faz com que se cria um scroll que permite a visualização de todo o texto dentro das dimensões especificadas.
           Pode-se definir  overflow-x e overflow-y para especificar a rolagem horizontal e vertical respectivamente*/
-          overflow: auto;
+        overflow: auto;
       }
-  </style>
 
-</head>
-<body>
+      #praia {
+        width: 450px;
+        /* Position static - padrão, não precisa ser declarado. Seguem o fluxo da página normalmente. Top, right, bottom, left não funcionam.
+        Position fixed - fica fixo na página, independentemente do scroll. É posicionado em relação ao viewport (tamanho total do documento) Top, right, bottom, left funcionam
+        Position sticky - quando barra de rolagem checa no elemento, ele cola na tela
+        Position relative - posicionado em relação à sua posição normal/static usando-se top, right, bottom e left.
+        Position absolute - posicionado em relação ao elemento pai que possui position relative. Caso não exista, será absoluto em relação ao body. 
+         */
+        position: absolute;
+        /* Determina a margem para uma box. */
+        top: 20px;
+        left: 10px;
+        /* Indica as camadas em que os elementos devem ser sobrepostos de modo absoluto, da mais remota à mais próxima. */
+        z-index: 1;
+      }
+
+      #gus {
+        width: 250px;
+        position: absolute;
+        top: 50px;
+        left: 40px;
+        z-index: 2;
+      }
+
+      #oculos {
+        /* Haverá, portanto, sobreposição das 3 ids, sendo que oculos fica no 1o. plano, gus no 2o. e praia no 3o. */
+        width: 100px;
+        position: absolute;
+        top: 108px;
+        left: 125px;
+        z-index: 3;
+      }
+
+      h1 {
+        position: absolute;
+        z-index: 4;
+        left: 30px;
+      }
+
+      #song {
+        position: absolute;
+        z-index: 5;
+        top: 300px;
+      }
+
+      .coqueiro {
+        width: 50px;
+        /* Faz com que elemento flutue para a esquerda ou para a direita */
+        float: left;
+        /* Margem entre o coqueiro e o texto que está à sua direita */
+        margin-right: 10px;
+      }
+
+      /* "Hover", aqui, é uma pseudoclasse. Pseudoclasses podem ser aplicadas a qualquer elemento Propriedades são aplicadas ao se passar o mouse sobre o elemento em questão. */
+      li:hover {
+        background-color: aquamarine;
+      }
+/* "Active" faz com que propriedades sejam aplicadas ao se clicar o mause sobre o elemento em questão. Há também a pseudoclasse "focus", para quando se clica em um campo para preenchimento */
+      li:active {
+
+      }
+    </style>
+  </head>
+  <body>
     <!-- Tag <div></div> cria um contâiner tipo block (em linha separada do conteúdo) que pode englobar diversos elementos. Se se tentar usá-la inline, irá quebrar linha para introduzir conteúdo -->
     <div class="paragrafos">
-        <!-- Tag <span></span> cria um contâiner tipo inline (na mesma linha que o conteúdo) que pode englobar trechos específicos -->
-        <p>Os <span class="cavalo-marinho">cavalos-marinhos</span> caracterizam-se por terem uma cabeça alongada, com filamentos que lembram a crina de um cavalo, e por exibirem mimetismo semelhante ao do camaleão, podendo mudar de cor e mexer os olhos independentemente um do outro. Nadam com o corpo na vertical, movimentando rapidamente as suas barbatanas. Algumas espécies podem ser confundidas com plantas marinhas, corais ou anêmonas marinhas. Geralmente medem entre 15 e 18 centímetros, mas podem medir desde 13 a 30 centímetros, dependendo da espécie, com peso entre 50 e 100 gramas. Vivem em águas de regiões de clima temperado e tropical.[2]</p>
+      <!-- Tag <span></span> cria um contâiner tipo inline (na mesma linha que o conteúdo) que pode englobar trechos específicos -->
+      <p>
+        Os <span class="cavalo-marinho">cavalos-marinhos</span> caracterizam-se
+        por terem uma cabeça alongada, com filamentos que lembram a crina de um
+        cavalo, e por exibirem mimetismo semelhante ao do camaleão, podendo
+        mudar de cor e mexer os olhos independentemente um do outro. Nadam com o
+        corpo na vertical, movimentando rapidamente as suas barbatanas. Algumas
+        espécies podem ser confundidas com plantas marinhas, corais ou anêmonas
+        marinhas. Geralmente medem entre 15 e 18 centímetros, mas podem medir
+        desde 13 a 30 centímetros, dependendo da espécie, com peso entre 50 e
+        100 gramas. Vivem em águas de regiões de clima temperado e tropical.[2]
+      </p>
 
-        <p>Todas as espécies de <span class="cavalo-marinho">cavalos-marinhos</span> estão em perigo de extinção. Uma das causas é pesca predatória e a destruição de habitat. Outra causa é o captura frequente deles para serem usados como peça de decoração ou simplesmente serem criados em um aquário.</p>
-        
-        <p>Existem três espécies brasileiras de <span class="cavalo-marinho">cavalos-marinhos</span>, o Hippocampus erectus, Hippocampus reidi e o Hippocampus patagonicus, que foi descoberto em 2004.[3] </p>
+      <p>
+        Todas as espécies de
+        <span class="cavalo-marinho">cavalos-marinhos</span> estão em perigo de
+        extinção. Uma das causas é pesca predatória e a destruição de habitat.
+        Outra causa é o captura frequente deles para serem usados como peça de
+        decoração ou simplesmente serem criados em um aquário.
+      </p>
+
+      <p>
+        Existem três espécies brasileiras de
+        <span class="cavalo-marinho">cavalos-marinhos</span>, o Hippocampus
+        erectus, Hippocampus reidi e o Hippocampus patagonicus, que foi
+        descoberto em 2004.[3]
+      </p>
     </div>
-  <div class="caixa width-and-height" style="background: #036b52">A</div>
-  <div class="caixa width-and-height padding" style="background: #41197f;">B</div>
-  <div class="caixa width-and-height padding margin" style="background: #444955">C</div>
-  <div class="caixa width-and-height padding margin border" style="background: #3898EC">D</div>
-</body>
+    <div id="song">
+      <p>
+        <img classe="coqueiro" src="images/coqueiro.png" Amou daquela vez como
+        se fosse a última Beijou sua mulher como se fosse a última E cada filho
+        seu como se fosse o único E atravessou a rua com seu passo tímido Subiu
+        a construção como se fosse máquina Ergueu no patamar quatro paredes
+        sólidas Tijolo com tijolo num desenho mágico Seus olhos embotados de
+        cimento e lágrima Sentou pra descansar como se fosse sábado Comeu feijão
+        com arroz como se fosse um príncipe Bebeu e soluçou como se fosse um
+        náufrago Dançou e gargalhou como se ouvisse música E tropeçou no céu
+        como se fosse um bêbado E flutuou no ar como se fosse um pássaro E se
+        acabou no chão feito um pacote flácido Agonizou no meio do passeio
+        público Morreu na contramão atrapalhando o tráfego
+      </p>
+      <p>
+        Amou daquela vez como se fosse o último Beijou sua mulher como se fosse
+        a única E cada filho seu como se fosse o pródigo E atravessou a rua com
+        seu passo bêbado Subiu a construção como se fosse sólido Ergueu no
+        patamar quatro paredes mágicas Tijolo com tijolo num desenho lógico Seus
+        olhos embotados de cimento e tráfego Sentou pra descansar como se fosse
+        um príncipe Comeu feijão com arroz como se fosse o máximo Bebeu e
+        soluçou como se fosse máquina Dançou e gargalhou como se fosse o próximo
+        E tropeçou no céu como se ouvisse música E flutuou no ar como se fosse
+        sábado E se acabou no chão feito um pacote tímido Agonizou no meio do
+        passeio náufrago Morreu na contramão atrapalhando o público
+      </p>
+      <p>
+        Amou daquela vez como se fosse máquina Beijou sua mulher como se fosse
+        lógico Ergueu no patamar quatro paredes flácidas Sentou pra descansar
+        como se fosse um pássaro E flutuou no ar como se fosse um príncipe E se
+        acabou no chão feito um pacote bêbado Morreu na contramão atrapalhando o
+        sábado
+      </p>
+      <p>
+        Por esse pão pra comer, por esse chão pra dormir A certidão pra nascer e
+        a concessão pra sorrir Por me deixar respirar, por me deixar existir
+        Deus lhe pague
+      </p>
+      <p>
+        Pela cachaça de graça que a gente tem que engolir Pela fumaça e desgraça
+        que a gente tem que tossir Pelos andaimes pingentes que a gente tem que
+        cair Deus lhe pague
+      </p>
+      <p>
+        Pela mulher carpideira pra nos louvar e cuspir E pelas moscas bicheiras
+        a nos beijar e cobrir E pela paz derradeira que enfim vai nos redimir
+        Deus lhe pague
+      </p>
+    </div>
+  </body>
 </html>
-
- 
-
