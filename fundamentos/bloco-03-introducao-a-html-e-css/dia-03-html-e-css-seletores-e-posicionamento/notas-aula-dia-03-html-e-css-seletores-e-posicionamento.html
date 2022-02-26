@@ -18,7 +18,7 @@
       p, div {
           font-family: monospace;
       }
-
+/* Enquanto ids são identificações que só podem ser atribuídas a um únco elemento, classes podem atribuídas a quantos elementos se desejar */
       .paragrafos {
         background-color: royalblue;
         /* Limita a largura do elemento. Se colocado em porcentagem, será relativa à largura total da janela do browser */
@@ -83,6 +83,20 @@
         margin-right: 10px;
       }
 
+      /*  Combinação. Aplica-se a todos os parágrafos que tenham a classe coqueiro como atributo. Funciona para todas as tags e também para ids, como em p#coqueiro. */
+      p.coqueiro {
+        border: 5px solid yellow;
+      }
+
+      /* Classes descendentes. Aplica-se a todos os parágrafos que forem filhos de list items, que, por sua vez, forem filhos de unordered lists. */
+      ul li p {
+        background-color: green;
+      }
+
+      /* Combinação + classes descendentes. Aplica-se a todos os parágrafos que forem filhos de liste items, que, por sua vez, sejam filhos de unordered lists que tenham por atributo a classe ingredientes-bauru. */
+      ul.ingredientes-bauru li p {
+        color: white;
+      }
       /* "Hover", aqui, é uma pseudoclasse. Pseudoclasses podem ser aplicadas a qualquer elemento Propriedades são aplicadas ao se passar o mouse sobre o elemento em questão. */
       li:hover {
         background-color: aquamarine;
@@ -119,7 +133,8 @@
 
       <p>
         Existem três espécies brasileiras de
-        <span class="cavalo-marinho">cavalos-marinhos</span>, o Hippocampus
+        <!-- Podem-se atribuir várias classes ao mesmo elemento, separando-se-as por um espaço simples dentro do atributo "class" -->
+        <span class="cavalo-marinho blue">cavalos-marinhos</span>, o Hippocampus
         erectus, Hippocampus reidi e o Hippocampus patagonicus, que foi
         descoberto em 2004.[3]
       </p>
