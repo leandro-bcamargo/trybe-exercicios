@@ -1,0 +1,46 @@
+#primary:hover {
+    border: 5px solid aquamarine;
+}
+
+#primary {
+    font-style: italic;
+}
+
+#secondary:hover {
+    border: 5px solid orange;
+}
+
+#secondary {
+    text-decoration: dotted;
+}
+
+#complementary:hover {
+    border: 5px solid blueviolet;
+}
+
+#complementary {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    font-style: italic;
+}
+
+#dark:hover {
+    border: 5px solid green;
+}
+
+#dark {
+    text-decoration: underline;
+}
+
+#light:hover {
+    border: 5px solid greenyellow;
+}
+
+#light {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+div {
+    padding: 1px;
+}
