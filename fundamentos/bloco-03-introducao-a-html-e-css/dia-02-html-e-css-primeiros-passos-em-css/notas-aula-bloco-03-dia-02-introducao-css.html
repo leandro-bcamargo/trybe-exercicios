@@ -1,96 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTC-8"
+  <head>
+    <meta charset="UTC-8" />
     <title>Página teste</title>
     <!-- Dentro desta tag estarão definidos todos os seletores para o estilo da página. -->
-    <style> 
-        /* Dentro destas chaves estarão as  propriedades  que se quer estilizar para todos os elementos h4 */
-        h2 {
-            /* estiliza cor do texto */
-            color: green; 
-            /* Determina o tamanho da fonte utilizada naquele elemento. Pode ser em pixels ou em ems. Ems são uma medida de proporção -> 2em indica que a fonte será 2x maior do que a fonte default para aquele elemento */
-            font-size: 2em;
-        }
-            
-        /* '#' indica id, estabelece propriedades que serão aplicadas somente ao elementos que possui esse id único */
-        #extinct-species { 
-            background-color: red;
+    <style>
+      /* Dentro destas chaves estarão as  propriedades  que se quer estilizar para todos os elementos h2 */
+      h2 {
+        /* estiliza cor do texto */
+        color: green;
+        /* Determina o tamanho da fonte utilizada naquele elemento. Pode ser em pixels ou em ems. Ems são uma medida de proporção -> 2em indica que a fonte será 2x maior do que a fonte default para aquele elemento */
+        font-size: 2em;
+      }
 
-        }
+      /* '#' indica id, estabelece propriedades que serão aplicadas somente ao elemento que possui esse id único */
+      #extinct-species {
+        background-color: red;
+      }
 
-        /* Note que tanto o seletor h4 quanto o seletor #description aplicam-se ao mesmo elemento. Nesse caso, prevalece o seletor que for aplicado por último, uma vez que ambas as propriedades serão aplicadas sucessivamente */
-        description { 
-            /* estabelece uma cor para o background de todo o corpo da página, definindo valores para red, green e blue respectivamente */
-            color: orange;
-        }
+      /* Note que tanto o seletor h2 quanto o seletor #description aplicam-se ao mesmo elemento. Nesse caso, prevalece o seletor que for aplicado por último, uma vez que ambas as propriedades serão aplicadas sucessivamente -> estilo em cascata */
+      #description {
+        color: orange;
+      }
 
-        p {
-            /* Elenca as fontes que serão utilizadas para determinado elemento. Caso o computador não possua a primeira fonte indicada, a segunda é apresentada em seu lugar */
-            font-family: fantasy, sans-serif;
-            /* Distância horizontal entre as letras */
-            letter-spacing: normal;
-            /* "none" retira estilização de um texto */
-            text-decoration: none;
-        }
+      p {
+        /* Elenca as fontes que serão utilizadas para determinado elemento. Caso o computador não possua a primeira fonte indicada, a segunda é apresentada em seu lugar */
+        font-family: fantasy, sans-serif;
+        /* Distância horizontal entre as letras */
+        letter-spacing: normal;
+        /* "none" retira estilização de um texto */
+        text-decoration: none;
+      }
 
-        /* Dentro do seletor "body" estarão as propriedades que se quer estilizar para toda a página */
-        body { 
-            background-color: rgb(255,150,200); 
-            font-size: 20px;
-        }
+      /* Dentro do seletor "body" estarão as propriedades que se quer estilizar para toda a página */
+      body {
+        /* estabelece uma cor para o background de todo o corpo da página, definindo valores para red, green e blue respectivamente */
+        background-color: rgb(255, 150, 200);
+        font-size: 20px;
+      }
 
-        /* "." indica a criação de uma classe, cujas propriedades serão aplicadas a todos os elementos que forem identificados por essa classe */
-        .list-style { 
-            background-color: blue;
-            color: white;
-            /* Faz com que a fonte fique com determinada espessura; no caso, negrito */
-            font-weight: bold;
-            /* Faz com que a fonte fique com determinado efeito; no caso, itálico */
-            font-style: italic;
-            /* Espaçamento entre linhas */
-            line-height: 40px;
-            /* Alinhamento do texto; no caso, centralizado */
-            text-align: center;
-            /* Decoração para o texto; no caso, sublinhado */
-            text-decoration: underline;
-            /* Espaço interno -> Espaçamento entre o texto e a borda do elemento */
-            padding: 10px;
-        }
+      /* "." indica a criação de uma classe, cujas propriedades serão aplicadas a todos os elementos que forem identificados por essa classe */
+      .list-style {
+        background-color: blue;
+        color: white;
+        /* Faz com que a fonte fique com determinada espessura; no caso, negrito */
+        font-weight: bold;
+        /* Faz com que a fonte fique com determinado efeito; no caso, itálico */
+        font-style: italic;
+        /* Distância entre linhas */
+        line-height: 40px;
+        /* Alinhamento do texto; no caso, centralizado */
+        text-align: center;
+        /* Decoração para o texto; no caso, sublinhado */
+        text-decoration: underline;
+        /* Espaço interno -> Espaçamento entre o conteúdo e a borda do elemento */
+        padding: 10px;
+      }
 
-        .color-teal {
-            color: teal;
-        }
+      .color-teal {
+        color: teal;
+      }
 
-        .picture {
-            /* Grau de arredondamento de uma imagem */
-            border-radius: 100%;
-        }
-        
+      .picture {
+        /* Grau de arredondamento de uma imagem */
+        border-radius: 100%;
+      }
     </style>
-</head>
-<body>
-
-    <!-- cria um id único para este elemento, que poderá ser identificado por outros elementos que queiram referir-se a este elemento em particular -->
-    <p id="extinct-species"></p> 
-    
-    <!-- Note que a estilização pode ser feita, também, inline, ou seja, dentro do próprio elemento que se quer estilizar. Para tanto, é preciso utilizar "style" como propriedade da tag em questão, bem como usar propriedade e valor como valor de "style". Trata-se, contudo, de uma prática não-recomendada. -->
-    <h2 id="description"> style="background-color: teal; font-family: verdana; "</h2>
-    <!-- Note que, para aplicar mais de uma classe ao mesmo elemento, dá-se um espaço entre elas e mantém-se-nas dentro das aspas -->
+  </head>
+  <body>
+    <!-- Cria um id único para este elemento, que poderá ser identificado por outros elementos que queiram referir-se a este elemento em particular. -->
+    <p id="extinct-species"></p>
+    <!-- Note que a estilização pode ser feita, também, inline, ou seja, dentro do próprio elemento que se quer estilizar. 
+    Para tanto, é preciso utilizar "style" como atributo da tag em questão, bem como usar propriedade e valor como valor de "style". 
+    Separam-se as propriedades por ";" 
+    Trata-se, contudo, de uma prática não recomendada. -->
+    <h2 id="description" style="background-color: teal; font-family: verdana">
+      Text
+    </h2>
+    <!-- Note que, para aplicar mais de uma classe ao mesmo elemento, dá-se um espaço entre elas e mantém-se-nas dentro das aspas.
+    Não é possível aplicar mais de uma id ao mesmo elemento. -->
     <ul class="list-style color-teal">
-        <li></li>
-        <li></li>
+      <li></li>
+      <li></li>
     </ul>
 
     <ol class="list-style">
-        <li></li>
-        <li></li>
+      <li></li>
+      <li></li>
     </ol>
 
-    <img class="picture" src="#.jpg" alt="foto">
-
-</body>
+    <img class="picture" src="#.jpg" alt="foto" />
+  </body>
 </html>
 
-<!-- Outra forma de utilizar o CSS é criar um arquivo CSS separado e linkar esse arquivo ao arquivo HTML. Para tanto, usa-se, dentro da tag <head></head>:
+<!-- Outra forma de utilizar o CSS é criar um arquivo CSS separado e linkar esse arquivo ao arquivo HTML. 
+Para tanto, usa-se, dentro da tag <head></head>:
 <link rel="stylesheet" type="text/css" href="style.css"> -->
+<!-- Seletor {
+        propriedade: valor;
+    } -->
+<!-- Usando-se "li" como seletor, modificam-se todos os list items, sejam eles membros de ordered ou de unordered lists. -->
+<!-- Usando-se "ol" ou "ul" como seletores, modificam-se apenas os list items que forem membros do tipo de lista especificado. -->
+<!-- Seletores em CSS são lidos em estilo cascata -> As propriedades lidas por último têm prevalência sobre aquelas lidas primeiro. -->
