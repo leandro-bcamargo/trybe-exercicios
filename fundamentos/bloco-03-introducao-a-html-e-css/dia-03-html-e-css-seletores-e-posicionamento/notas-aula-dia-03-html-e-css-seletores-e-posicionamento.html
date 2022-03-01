@@ -9,7 +9,24 @@
       body {
         font-family: fantasy;
         color: aquamarine;
+        /* Coloca uma imagem como pano de fundo para um elemento */
+        background-image: url(http://...);
+        /* Desloca a imagem na vertical (de cima para baixo) e na horizontal (da esquerda para a direita) */
+        background-position: 50% 25%;
+        /* Valor "contain" - Repete a imagem até preencher o pano de fundo do elemento. 
+        Valor "cover" - amplia a imagem para preencher o pano de fundo do elemento*/
+        background-size: contain;
+        /* Determina a largura máxima do texto em relação ao contâiner. */
+        max-width: 70%;
+        /* Mostra conteúdo lado a lado e possibilita modificação de width e height. */
+        display: inline-block;
       }
+
+      /* Seletor universal. */
+      * {
+
+      }
+
       .cavalo-marinho {
         color: blue;
       }
@@ -18,15 +35,18 @@
       p, div {
           font-family: monospace;
       }
-/* Enquanto ids são identificações que só podem ser atribuídas a um únco elemento, classes podem atribuídas a quantos elementos se desejar */
+      /* Enquanto ids são identificações que só podem ser atribuídas a um únco elemento, classes podem atribuídas a quantos elementos se desejar */
       .paragrafos {
         background-color: royalblue;
-        /* Limita a largura do elemento. Se colocado em porcentagem, será relativa à largura total da janela do browser */
+        /* Limita a largura do elemento. 
+        Se colocado em porcentagem, será relativa à largura total do contâiner em que se encontra e mudará dinamicamente conforme o contâiner ou mesmo a janela do navegador for alterada */
         width: 500px;
-        /* Limita a altura do elemento. Se conteúdo não couber na largura especificada, haverá overflow e os elementos que se seguirem se sobreporão a esse conteúdo, gerando problemas na visualização */
+        /* Limita a altura do elemento. Se conteúdo não couber na altura especificada, haverá overflow e os elementos seguintes a ele se sobreporão ao overflow, uma vez que esses elementos seguintes são posicionados segundo o suposto fim do elemento. Haverá, portanto, problemas na visualização */
         height: 300px;
-        /* Determina o que ocorre com o conteúdo que não couber nas dimensões especificadas para o contâiner. O valor padrão é visível, porém pode-se ocultá-lo mudando-se o valor para "hidden". O valor "auto" faz com que se cria um scroll que permite a visualização de todo o texto dentro das dimensões especificadas.
-          Pode-se definir  overflow-x e overflow-y para especificar a rolagem horizontal e vertical respectivamente*/
+        /* Determina o que ocorre com o conteúdo que não couber nas dimensões especificadas para o contâiner. 
+        O valor padrão é visible, porém pode-se ocultá-lo mudando-se o valor para "hidden". 
+        O valor "auto" faz com que se crie um scroll que permite a visualização de todo o texto dentro das dimensões especificadas.
+        Podem-se definir  overflow-x e overflow-y para especificar a rolagem horizontal e vertical respectivamente*/
         overflow: auto;
       }
 
@@ -55,7 +75,6 @@
       }
 
       #oculos {
-        /* Haverá, portanto, sobreposição das 3 ids, sendo que oculos fica no 1o. plano, gus no 2o. e praia no 3o. */
         width: 100px;
         position: absolute;
         top: 108px;
@@ -77,7 +96,7 @@
 
       .coqueiro {
         width: 50px;
-        /* Faz com que elemento flutue para a esquerda ou para a direita */
+        /* Faz com que elemento flutue para a esquerda ou para a direita, de modo que os elementos seguintes se desloquem para preencher o espaço deixado. */
         float: left;
         /* Margem entre o coqueiro e o texto que está à sua direita */
         margin-right: 10px;
@@ -93,7 +112,7 @@
         background-color: green;
       }
 
-      /* Combinação + classes descendentes. Aplica-se a todos os parágrafos que forem filhos de liste items, que, por sua vez, sejam filhos de unordered lists que tenham por atributo a classe ingredientes-bauru. */
+      /* Combinação + classes descendentes. Aplica-se a todos os parágrafos que forem filhos de list items, que, por sua vez, forem filhos de unordered lists que tenham por atributo a classe ingredientes-bauru. */
       ul.ingredientes-bauru li p {
         color: white;
       }
@@ -101,10 +120,11 @@
       li:hover {
         background-color: aquamarine;
       }
-/* "Active" faz com que propriedades sejam aplicadas ao se clicar o mause sobre o elemento em questão. Há também a pseudoclasse "focus", para quando se clica em um campo para preenchimento */
+      /* "Active" faz com que propriedades sejam aplicadas ao se clicar o mouse sobre o elemento em questão. Há também a pseudoclasse "focus", para quando se clica em um campo para preenchimento */
       li:active {
 
       }
+
     </style>
   </head>
   <body>
@@ -141,7 +161,7 @@
     </div>
     <div id="song">
       <p>
-        <img classe="coqueiro" src="images/coqueiro.png" Amou daquela vez como
+        <img classe="coqueiro" src="images/coqueiro.png"> Amou daquela vez como
         se fosse a última Beijou sua mulher como se fosse a última E cada filho
         seu como se fosse o único E atravessou a rua com seu passo tímido Subiu
         a construção como se fosse máquina Ergueu no patamar quatro paredes
@@ -151,42 +171,29 @@
         náufrago Dançou e gargalhou como se ouvisse música E tropeçou no céu
         como se fosse um bêbado E flutuou no ar como se fosse um pássaro E se
         acabou no chão feito um pacote flácido Agonizou no meio do passeio
-        público Morreu na contramão atrapalhando o tráfego
-      </p>
-      <p>
-        Amou daquela vez como se fosse o último Beijou sua mulher como se fosse
-        a única E cada filho seu como se fosse o pródigo E atravessou a rua com
-        seu passo bêbado Subiu a construção como se fosse sólido Ergueu no
-        patamar quatro paredes mágicas Tijolo com tijolo num desenho lógico Seus
-        olhos embotados de cimento e tráfego Sentou pra descansar como se fosse
-        um príncipe Comeu feijão com arroz como se fosse o máximo Bebeu e
-        soluçou como se fosse máquina Dançou e gargalhou como se fosse o próximo
-        E tropeçou no céu como se ouvisse música E flutuou no ar como se fosse
-        sábado E se acabou no chão feito um pacote tímido Agonizou no meio do
-        passeio náufrago Morreu na contramão atrapalhando o público
-      </p>
-      <p>
-        Amou daquela vez como se fosse máquina Beijou sua mulher como se fosse
-        lógico Ergueu no patamar quatro paredes flácidas Sentou pra descansar
-        como se fosse um pássaro E flutuou no ar como se fosse um príncipe E se
-        acabou no chão feito um pacote bêbado Morreu na contramão atrapalhando o
-        sábado
-      </p>
-      <p>
-        Por esse pão pra comer, por esse chão pra dormir A certidão pra nascer e
-        a concessão pra sorrir Por me deixar respirar, por me deixar existir
-        Deus lhe pague
-      </p>
-      <p>
-        Pela cachaça de graça que a gente tem que engolir Pela fumaça e desgraça
-        que a gente tem que tossir Pelos andaimes pingentes que a gente tem que
-        cair Deus lhe pague
-      </p>
-      <p>
-        Pela mulher carpideira pra nos louvar e cuspir E pelas moscas bicheiras
-        a nos beijar e cobrir E pela paz derradeira que enfim vai nos redimir
-        Deus lhe pague
+        público Morreu na contramão atrapalhando o tráfego.
       </p>
     </div>
   </body>
 </html>
+
+<!-- Todos os elementos HTML são renderizados como caixas pelo browser. Por isso nós usamos o termo "box model" ou "modelo de caixas" quando nos referimos a essa forma de renderização e, por tabela, quando falamos de alguns elementos do layout. -->
+
+<!-- Para exemplificar, se você utilizou a propriedade CSS background-color em algum dos elementos do seu portfólio web, você certamente percebeu que a cor de fundo foi aplicada não apenas à área diretamente atrás do elemento html, mas também em uma pequena área ao seu redor. Isso acontece porque quando você muda a cor de fundo de um elemento você está colorindo toda a caixa em que ele está contido! -->
+
+<!-- O box model é composto por algumas partes que formam uma caixa para cada tag HTML que você utiliza. -->
+
+<!-- Width e height -> especificam, respectivamente, a largura e a altura da área de conteúdo, desconsiderando as bordas, margens e padding. -->
+
+<!-- Padding - pode ser traduzido como "enchimento" e controla a quantidade de espaço vazio entre o conteúdo em si e a borda da caixa.
+Ele pode ser pensado como se fosse o "plástico bolha" ao redor do conteúdo, e o seu uso, por padrão, aumenta o tamanho total do elemento, enchendo a caixa e fazendo com que ela precise ser maior que as dimensões do conteúdo.
+Tenha isso em mente quando for balancear a altura e a largura, afinal, uma caixa precisa ser maior que as dimensões do conteúdo quando ele está coberto com plástico bolha, não é mesmo? -->
+
+<!-- Border - é a borda da caixa, pura e simples. 
+A propriedade border em si é considerada uma *shorthand*, ou seja, ela serve como um atalho para controlar um conjunto de outras propriedades que poderiam ser definidas individualmente, nesse caso "border-width", "border-style", e "border-color"!
+border-width - também pode controlar a largura da borda e o seu valor inicial é medium.
+border-style - essa propriedade controla o estilo da linha e tem como valor inicial "none". Por isso que você não consegue ver nenhuma borda se não alterar essa propriedade!
+border-color - essa propriedade controla a cor da borda, e tem como valor inicial "currentcolor". Esse valor define a cor da borda como sendo o mesmo do elemento, então na maioria dos casos é desejável modificá-la. -->
+
+<!-- Margin - a margem funciona como um tipo de "campo de força" que expande o elemento para além das suas dimensões visíveis. Ela fica do lado de fora da borda e não é afetada pela estilização do elemento, servindo mais para manejar o afastamento entre as caixas. Ainda assim, não esqueça que a margem faz parte da caixa dentro do box model! -->
+
