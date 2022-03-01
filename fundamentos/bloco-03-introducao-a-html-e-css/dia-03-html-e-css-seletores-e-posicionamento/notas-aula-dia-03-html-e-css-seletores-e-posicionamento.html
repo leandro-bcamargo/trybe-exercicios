@@ -24,16 +24,16 @@
 
       /* Seletor universal. */
       * {
-
       }
 
       .cavalo-marinho {
         color: blue;
       }
-      
+
       /* Agrupamento de seletores permite aplicar as mesmas propriedades a mais de um seletor */
-      p, div {
-          font-family: monospace;
+      p,
+      div {
+        font-family: monospace;
       }
       /* Enquanto ids são identificações que só podem ser atribuídas a um únco elemento, classes podem atribuídas a quantos elementos se desejar */
       .paragrafos {
@@ -122,9 +122,7 @@
       }
       /* "Active" faz com que propriedades sejam aplicadas ao se clicar o mouse sobre o elemento em questão. Há também a pseudoclasse "focus", para quando se clica em um campo para preenchimento */
       li:active {
-
       }
-
     </style>
   </head>
   <body>
@@ -161,16 +159,16 @@
     </div>
     <div id="song">
       <p>
-        <img classe="coqueiro" src="images/coqueiro.png"> Amou daquela vez como
-        se fosse a última Beijou sua mulher como se fosse a última E cada filho
-        seu como se fosse o único E atravessou a rua com seu passo tímido Subiu
-        a construção como se fosse máquina Ergueu no patamar quatro paredes
-        sólidas Tijolo com tijolo num desenho mágico Seus olhos embotados de
-        cimento e lágrima Sentou pra descansar como se fosse sábado Comeu feijão
-        com arroz como se fosse um príncipe Bebeu e soluçou como se fosse um
-        náufrago Dançou e gargalhou como se ouvisse música E tropeçou no céu
-        como se fosse um bêbado E flutuou no ar como se fosse um pássaro E se
-        acabou no chão feito um pacote flácido Agonizou no meio do passeio
+        <img classe="coqueiro" src="images/coqueiro.png" /> Amou daquela vez
+        como se fosse a última Beijou sua mulher como se fosse a última E cada
+        filho seu como se fosse o único E atravessou a rua com seu passo tímido
+        Subiu a construção como se fosse máquina Ergueu no patamar quatro
+        paredes sólidas Tijolo com tijolo num desenho mágico Seus olhos
+        embotados de cimento e lágrima Sentou pra descansar como se fosse sábado
+        Comeu feijão com arroz como se fosse um príncipe Bebeu e soluçou como se
+        fosse um náufrago Dançou e gargalhou como se ouvisse música E tropeçou
+        no céu como se fosse um bêbado E flutuou no ar como se fosse um pássaro
+        E se acabou no chão feito um pacote flácido Agonizou no meio do passeio
         público Morreu na contramão atrapalhando o tráfego.
       </p>
     </div>
@@ -191,9 +189,14 @@ Tenha isso em mente quando for balancear a altura e a largura, afinal, uma caixa
 
 <!-- Border - é a borda da caixa, pura e simples. 
 A propriedade border em si é considerada uma *shorthand*, ou seja, ela serve como um atalho para controlar um conjunto de outras propriedades que poderiam ser definidas individualmente, nesse caso "border-width", "border-style", e "border-color"!
-border-width - também pode controlar a largura da borda e o seu valor inicial é medium.
-border-style - essa propriedade controla o estilo da linha e tem como valor inicial "none". Por isso que você não consegue ver nenhuma borda se não alterar essa propriedade!
+border-width - controla a largura da borda e o seu valor inicial é medium.
+border-style - controla o estilo da linha e tem como valor inicial "none". Por isso que você não consegue ver nenhuma borda se não alterar essa propriedade!
 border-color - essa propriedade controla a cor da borda, e tem como valor inicial "currentcolor". Esse valor define a cor da borda como sendo o mesmo do elemento, então na maioria dos casos é desejável modificá-la. -->
 
-<!-- Margin - a margem funciona como um tipo de "campo de força" que expande o elemento para além das suas dimensões visíveis. Ela fica do lado de fora da borda e não é afetada pela estilização do elemento, servindo mais para manejar o afastamento entre as caixas. Ainda assim, não esqueça que a margem faz parte da caixa dentro do box model! -->
+<!-- Margin - a margem funciona como um tipo de "campo de força" que expande o elemento para além das suas dimensões visíveis. Ela fica do lado de fora da borda e não é afetada pela estilização do elemento, servindo mais para manejar o afastamento entre as caixas. Ainda assim, não esqueça que a margem faz parte da caixa no box model! -->
 
+<!-- Position relative muda a posição do elemento em relação à posição que ele ocupava anteriormente, sem causar nenhuma mudança no layout ao seu redor, deixando um vácuo em sua posição original.
+Position absolute muda a posição do elemento em relação ao seu parent, causando mudança no layout ao seu redor porque é ignorado pelos outros elementos e não deixa um vácuo em sua posição original. -->
+
+<!-- Use top, right, bottom, left somente para modificar a posição de elementos com
+propriedade position relative/absolute. Caso contrário, use margin. -->
