@@ -55,14 +55,18 @@
         }
         changeParagraph("p");
 
-        function changeSquareColor(squareClass, color) {
-            let square = document.getElementsByClassName(squareClass);
-            square[0].style.backgroundColor = color;
-        }
-        changeSquareColor("main-content", "rgb(76,164,109")
 
 //  Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+
+function changeSquareColor (squareClass, color, index) {
+            let square = document.getElementsByClassName(squareClass);
+            square[index].style.backgroundColor = color;
+        }
+        changeSquareColor("main-content", "rgb(76,164,109", 0);
+
 //  Crie uma função que mude a cor do quadrado vermelho para branco.
+
+        changeSquareColor("center-content", "white", 0);
 //  Crie uma função que corrija o texto da tag <h1>.
 //  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
 //  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
