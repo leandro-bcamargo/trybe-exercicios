@@ -68,8 +68,28 @@ function changeSquareColor (squareClass, color, index) {
 
         changeSquareColor("center-content", "white", 0);
 //  Crie uma função que corrija o texto da tag <h1>.
+    function changeTitle(titleClass, newTitle, index) {
+        let title = document.getElementsByClassName(titleClass);
+        title[index].innerText = newTitle;
+    }
+    changeTitle("title", "Exercício 5.1 - JavaScript", 0);
 //  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+    function changeParagraphsCaps(tag) {
+        let paragraphs = document.getElementsByTagName(tag);
+        for (let i = 0; i < paragraphs.length; i += 1) {
+            paragraphs[i].innerText = paragraphs[i].innerText.toUpperCase();
+        }
+    }
+        changeParagraphsCaps("p");
+
 //  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+    function showContent(tag) {
+        let paragraphs = document.getElementsByTagName(tag);
+        for (let i = 0; i < paragraphs.length; i += 1) {
+            console.log(paragraphs[i].innerText);
+        }
+    }
+    showContent("p");
 
     </script>
   </body>
