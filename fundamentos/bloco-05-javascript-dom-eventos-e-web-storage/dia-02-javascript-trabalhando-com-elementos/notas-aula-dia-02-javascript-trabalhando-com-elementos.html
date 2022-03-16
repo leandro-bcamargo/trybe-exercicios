@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>>
+
+<!-- DOM é construído como uma árvore de objetos. -->
+<!-- 
+                                 html
+
+                                 body
+
+header                           section                            section Modo
+                              Ingredientes                           de Preparo
+  h1    
+                               h2     ul                             h2       ol
+                                      
+                                      li                                      li
+                                      li                                      li
+                                      li                                      li
+-->                                   
+
+<!-- Para retornar o elemento pai de um determinado elemento, usa-se o commando
+    document.querySelector("elemento").parentNode -->
+
+<!-- É possível concatenar propriedades .parentNode para ascender na árvore do DOM 
+document.querySelector("elemento").parentNode.parentNode -->
+
+<!-- Propriedade parentNode é apenas para leitura, não é possível atribuir seu valor a uma variável -->
+
+<!-- A propriedade parentNode acessa o elemento pai do elemento sobre o qual a propriedade é chamada. Mas ela não é a única forma de, a partir de um elemento, navegar para outros. -->
+
+<!-- parentNode : retorna o nó pai.
+parentElement : retorna o elemento pai.
+childNodes : retorna um NodeList com todos os nós filhos.
+children : retorna um HTMLCollection com todos os elementos filhos.
+firstChild : retorna o primeiro nó filho.
+firstElementChild : retorna o primeiro elemento filho.
+lastChild : retorna o último nó filho.
+lastElementChild : retorna o último elemento filho.
+nextSibling : retorna o próximo nó.
+nextElementSibling : retorna o próximo elemento.
+previousSibling : retorna o nó anterior.
+previousElementSibling : retorna o elemento anterior. -->
+
+<!-- É importante dizer que, à primeira vista, as propriedades nextSibling e nextElementSibling parecem fazer a mesma coisa, mas uma pega o próximo nó do DOM , enquanto a outra pega o próximo elemento, e nem sempre o próximo nó é um elemento. Pode ser apenas texto, por exemplo. -->
+
+<div id="start"></div>
+nó
+<p>elemento</p>
+<script>
+    console.log(document.getElementById('start').nextSibling) // nó
+
+    console.log(document.getElementById('start').nextElementSibling) // <p>elemento</p>
+</script>
+
+<!-- Primeiro, foi selecionado o elemento div utilizando o seu id , 'start'. Na sequência, aplicadas as propriedades nextSibling e nextElementSibling . Você pode ver que, nextSibling retornará o texto "nó" que representa o próximo nó do DOM a partir da div , enquanto que, nextElementSibling retornará o próximo elemento propriamente, ou seja, o elemento <p>. -->
+
+<!-- Função createElement() cria elementos HTML -->
+<!-- Função appendChild() adiciona elementos à página -->
+
+<script>
+    // Criamos um array cujos elementos serão os elementos da lista a ser introduzida.
+    let ingredientItems = [
+        '500g de feijão cozido'
+        '200g de toucinho'
+        '1 xícara de óleo'
+    ]
+
+    let ingredientList = document.querySelector(.ingredients-list); // Selecionamos a lista do html e atribuímo-na a uma variável.
+    for (let i = 0; i < ingredientItems.length; i += 1) { // Criamos um loop para que cada item do array seja adicionado à lista sucessivamente.
+        let ingredient = ingredientItems[i];
+
+        let ingredientListItem = document.createElement("li"); // Criamos um list item para cada volta do loop.
+        ingredientListItem.innerHTML = ingredient; // Atribuímos a cada um desses list item um item do array como seu conteúdo.
+        ingredientListItem.className = "ingredient-list-item"; // Atribuímos uma mesma classe a cada um dos itens da lista
+
+        ingredientList.appendChild(ingredientListItem); // Adicionamos esse list item como filho da lista.
+        
+    }
+
+    let ingredientListItems = querySelectorAll(".ingredient-list-item"); // Cria um array com todos os itens da lista, pois todos possuem essa classe.
+
+    for (let i = 0; index < ingredientListItems.length; i += 1) { // Cria um loop para percorrer todos os elementos da lista
+        let element = ingredientListItems[i]; // atribui cada item da lista à variável element
+        if (element.innerHTML.includes("toucinho")) { // Se o item da lista possui a string "toucinho" como parte de seu conteúdo, esse item é removido de seu elemento pai.
+            ingredientList.removeChild(element);
+        }       
+    }
+
+</script>

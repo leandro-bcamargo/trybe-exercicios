@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="paiDoPai">
+      <section id="pai">
+        <section id="primeiroFilho"></section>
+        <section id="elementoOndeVoceEsta">
+          <section id="primeiroFilhoDoFilho"></section>
+          <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+        Atenção!
+        <section id="terceiroFilho"></section>
+        <section id="quartoEUltimoFilho"></section>
+      </section>
+    </main>
+    <script>
+      // Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+
+      let paiDoPai = document.querySelector("#paiDoPai");
+      let pai = document.querySelector("#pai");
+      let childrenPaiDoPai = paiDoPai.childNodes;
+      let childrenPai = pai.childNodes;
+      let elementoOndeVoceEsta = document.querySelector(
+        "#elementoOndeVoceEsta"
+      );
+      let childrenElementoOndeVoceEsta = elementoOndeVoceEsta.childNodes;
+      for (let i = 0; i < childrenPaiDoPai.length; i += 1) {
+        for (let j = 0; j < childrenPai.length; j += 1) {
+          if (childrenPai[j].id !== "elementoOndeVoceEsta") {
+            pai.removeChild(childrenPai[j]);
+          }
+          for (let k = 0; k < childrenElementoOndeVoceEsta.length; k += 1) {
+            if (childrenElementoOndeVoceEsta[k].id !== "primeiroFilhoDoFilho") {
+              elementoOndeVoceEsta.removeChild(childrenElementoOndeVoceEsta[k]);
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
