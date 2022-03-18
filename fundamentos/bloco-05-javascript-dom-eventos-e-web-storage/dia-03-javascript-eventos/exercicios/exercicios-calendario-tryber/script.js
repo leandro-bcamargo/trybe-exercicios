@@ -22,6 +22,7 @@ function createDaysOfTheWeek() {
         let calendarDay = document.createElement("li");
         parentCalendarDays.appendChild(calendarDay);
         calendarDay.className = "day";
+        calendarDay.innerText = dezDaysList[i];
     }
     let arrayDays = document.querySelectorAll(".day");
     console.log(arrayDays.length);
