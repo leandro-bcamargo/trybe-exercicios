@@ -24,7 +24,6 @@ createDaysOfTheWeek();
         calendarDay.innerText = dezDaysList[i];
     }
     let arrayDays = document.querySelectorAll(".day");
-    console.log(arrayDays.length);
     for (var j = 0; j < arrayDays.length; j += 1) {
         if (j === 25 || j === 26 || j === 32) {
             arrayDays[j].classList.add("holiday");
@@ -47,14 +46,26 @@ createDaysCalendar();
    button.style.width = "80px"
    button.style.height = "40px"
    let parentOfButton = document.querySelector("div.buttons-container");
-   console.log(parentOfButton);
    parentOfButton.appendChild(button);
  }
  addFeriados("Feriados")
  
+//  Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
 
 
-
-    
-  
-
+function addClickEvent(color) {
+  let button = document.querySelector("#btn-holiday");
+  button.addEventListener("click", function() {
+    let holidaysArray = document.querySelectorAll(".holiday");
+    for (let i = 0; i < holidaysArray.length; i += 1) {
+      if (holidaysArray[i].style.backgroundColor === color) {
+        holidaysArray[i].style.backgroundColor = "rgb(238,238,238)";
+      }
+      else {
+        holidaysArray[i].style.backgroundColor = color;
+      }
+    }
+  })
+} 
+addClickEvent("lightgreen");
