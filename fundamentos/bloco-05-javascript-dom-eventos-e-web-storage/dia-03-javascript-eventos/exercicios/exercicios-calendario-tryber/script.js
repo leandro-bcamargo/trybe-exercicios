@@ -28,7 +28,7 @@ createDaysOfTheWeek();
         if (j === 25 || j === 26 || j === 32) {
             arrayDays[j].classList.add("holiday");
         }
-        else if (j === 5 || j === 12 || j === 19 || j === 26)
+        if (j === 5 || j === 12 || j === 19 || j === 26)
             arrayDays[j].classList.add("friday");
     }
 }
@@ -43,8 +43,6 @@ createDaysCalendar();
    let button = document.createElement("button");
    button.innerText = string;
    button.id = "btn-holiday";
-   button.style.width = "80px"
-   button.style.height = "40px"
    let parentOfButton = document.querySelector("div.buttons-container");
    parentOfButton.appendChild(button);
  }
@@ -80,8 +78,6 @@ function createButton(string) {
   buttonFriday.innerHTML = string;
   buttonFriday.id = "btn-friday";
   let buttonFridayParent = document.querySelector(".buttons-container");
-  console.log(buttonFridayParent);
-  console.log(buttonFriday);
   buttonFridayParent.appendChild(buttonFriday);
 
 }
@@ -89,3 +85,32 @@ createButton("Sexta-feira");
 
 // Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
 // É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
+
+function addClickFriday() {
+  let buttonFriday = document.querySelector("#btn-friday");
+  buttonFriday.addEventListener("click", function() {
+    let allFridays = document.querySelectorAll(".friday"); 
+    for (let j = 0; j < allFridays.length; j += 1) {
+      if (allFridays[j].innerText === "sexta-feira") {
+        switch (j) {
+          case 0:
+            allFridays[j].innerText = "4";
+            break;
+          case 1:
+            allFridays[j].innerText = "11";
+            break;
+          case 2:
+            allFridays[j].innerText = "18";
+            break;
+          case 3:
+            allFridays[j].innerText = "25";
+            break;
+        }
+      }
+      else {
+        allFridays[j].innerText = "sexta-feira";
+      }
+    }
+  })
+}
+addClickFriday();
