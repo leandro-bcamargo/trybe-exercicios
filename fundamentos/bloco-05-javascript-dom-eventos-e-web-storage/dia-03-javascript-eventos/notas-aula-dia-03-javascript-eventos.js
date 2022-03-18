@@ -98,4 +98,5 @@ function resetText(event) {
   // event.target na nossa função retornará o objeto 'firstLi'.
 
 
-
+// .children[n] -> seleciona o n-ésimo filho
+// Todo elemento html é representado no dom por um objeto.
