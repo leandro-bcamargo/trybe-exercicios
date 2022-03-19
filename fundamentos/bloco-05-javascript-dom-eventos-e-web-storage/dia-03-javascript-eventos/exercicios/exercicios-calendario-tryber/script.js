@@ -120,11 +120,9 @@ addClickFriday();
 
 function addZoom() {
   days = document.querySelectorAll(".day");
-  console.log(days);
   for (let i = 0; i < days.length; i += 1) {
     days[i].addEventListener("mouseover", function () {
       days[i].style.fontSize = "2em";
-      console.log(days[i]);
     })
     days[i].addEventListener("mouseout", function () {
       days[i].style.fontSize = "1em";
@@ -157,3 +155,21 @@ function addColor(string) {
 }
 addColor("teal");
 
+// Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
+// Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+
+function addClassTask() {
+  let divTask = document.querySelector(".task");
+  divTask.addEventListener("click", function () {
+    if (divTask.classList.contains("task")) {
+      divTask.classList = "task-selected";
+    }
+    else if (divTask.classList.contains("task-selected")) {
+      console.log("test");
+      divTask.classList = "task";
+    }
+      
+  }) 
+}
+
+addClassTask();
