@@ -211,3 +211,6 @@ function addPhraseToSessionStorage() {
 button.addEventListener('click', addPhraseToSessionStorage);
 
 {/* <input></input> uma tag html que permite a interação entre o usuário que está utilizando o site e o código. */}
+
+// `${variável} string` -> permite que uma variável seja usada no interior de uma string. 
+
