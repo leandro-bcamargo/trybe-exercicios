@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <label for="input-name">Nome Completo:
+            <input type="text" name="name" id="input-name" required minlength="10" maxlength="40">
+        </label>
+        <br><br>
+        <label for="input-email">E-mail:
+            <input type="email" name="email" id="input-email" required minlength="10" maxlength="50">
+        </label>
+        <br><br>
+        <label for="destinos-preferidos">Destinos Preferidos:
+            <select name="destinos" id="destinos-preferidos">
+                <option value="city" id="destino-cidade">Cidade</option>
+                <option value="country" id="destino-campo">Campo</option>
+                <option value="beach" id="destino-praia">Praia</option>
+                <option value="mountains" id="destino-montanhas">Montanhas</option>
+            </select>
+        </label>
+        <br><br>
+        <label for="textarea-motivacao"> Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?
+            <br><br>
+            <textarea name="motivacao" id="textarea-motivacao" cols="30" rows="10" maxlength="500">
+            </textarea>
+        </label>
+        <br><br>
+        <label for="input-date">Qual a melhor data para realizar sua viagem?
+            <input type="date" name="date" id="input-date">
+        </label>
+        <br><br>
+        <input type="checkbox" name="news" id="checkbox-news">
+        <label for="checkbox-news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+        <br><br>
+        <input type="checkbox" name="contest" id="checkbox-contest">
+        <label for="checkbox-contest">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+        <br><br>
+        <button type="submit" id="submit-button">Enviar</button>
+        <br><br>
+        <button type="reset">Limpar</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
