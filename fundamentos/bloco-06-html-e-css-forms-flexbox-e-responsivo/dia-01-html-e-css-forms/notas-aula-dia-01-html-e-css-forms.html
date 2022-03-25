@@ -1,0 +1,217 @@
+<!-- Formulários servem para coletar dados. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <!-- Para criar um formulário, usa-se a tag <form></form> -->
+    <!-- Atributo action -> para onde os dados do formulário serão enviados. -->
+    <!-- Atributo method pode ser GET ou POST. No GET os dados serão enviados através da URL e, portanto, ficam visíveis na URL. No POST, dados não são enviados através da URL e não ficam visíveis na URL.  -->
+
+    <form action="" method="GET">
+        <!-- Tag <label></label> fornce uma explicação sobre o input. -->
+        <!-- Atributo for cria um vínculo entre a label e o campo de input. Para criar esse vínculo, usa-se o id do input como o valor do for. -->
+
+        <label for="input-text">Digite seu nome: </label>
+
+
+        <!-- Depois declaram-se os campos que se quer adicionar ao formulário. O principal campo é o input. -->
+        <!-- Atributo type diz qual o tipo de entrada de dados que queremos que o usuário faça. Há muitos tipos diferentes. -->
+        <!-- Atributo placeholder coloca um texto dentro do campo de input dizendo o que o usuário deve inserir nesse espaço. -->
+        <!-- Atributo required faz com que o formulário não possa ser enviado sem que o input em questão seja preenchido. -->
+        <!-- Atributo value faz com que o input venha previamente preenchido com um texto. -->
+        <!-- Atributo name é o nome que será dado a esse campo ao colocar um valor. É esse name que irá na URL ao submeter o formulário. -->
+
+        <input type="text" placeholder="Digite alguma coisa" required name="texto" id="input-text" value="Gustavo" class="">
+        <br>
+        <!-- Tag <textarea></textarea> cria uma caixa de texto. -->
+        <!-- Cols fornece a quantidade de colunas.
+        Rows fornece a quantidade de linhas. -->
+        <!-- Se se quiser deixar um texto previamente digitado, basta inserí-lo entre as tags. -->
+        <textarea name="" id="" cols="30" rows="10">Texto previamente digitado
+        </textarea>
+
+        <!-- Input com type checkbox permite escolher diversas opções. -->
+        <!-- Atributo checked faz com que o checkbox já comece selecionado. -->
+        <!-- Texto de cada checkbox é inserido após a tag. -->
+        <!-- Atributo value é o valor a ser passado quando o usuário selecionar o checkbox. -->
+        <!-- Para que todos os checkboxes façam parte de um mesmo contexto, eles precisam ter o mesmo atributo name. -->
+        <!-- Pode-se colocar um id específico para cada checkbox. -->
+
+        <input type="checkbox" value="fut" name="esporte" id="esporte-1" checked>Futebol
+        <input type="checkbox" value="vol" name="esporte" id="esporte-2">Vôlei
+        <input type="checkbox" value="pet" name="esporte" id="esporte-3">Peteca
+        <input type="checkbox" value="bas" name="esporte" id="esporte-4">Basquete
+
+        <!-- Input com type radio permite escolher apenas uma opção. -->
+        <input type="radio" name="hub" value="sp" id="hub1">São Paulo
+        <input type="radio" name="hub" value="bh" id="hub2">Belo Horizonte
+        <input type="radio" name="hub" value="fl" id="hub3">Florianópolis
+        <input type="radio" name="hub" value="mc" id="hub4">Macedônia
+
+        <!-- É possível colocar o input dentro da tag <label></label>, para que ele possa ser selecionado clicando-se em qualquer lugar do texto, não apenas no círculo. -->
+        <label><input type="radio" name="hub" value="sp" id="hub1">São Paulo</label>
+        <label><input type="radio" name="hub" value="bh" id="hub2">Belo Horizonte</label>
+        <label><input type="radio" name="hub" value="fl" id="hub3">Florianópolis</label>
+        <label><input type="radio" name="hub" value="mc" id="hub4">Macedônia
+        </label>
+
+
+        <!-- Para criar um dropdown list, usa-se a tag <select></select> -->
+        <select name="estado" id="dropdown-estado">
+            <!-- Dentro de select, cada opção é criada pela tag <option></option> -->
+            <option value="sp">São Paulo</option>
+            <option value="bh">Bahia</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="mg">Minas Gerais</option>
+        </select>
+
+        <!-- Input com type password cria campo de senha no qual os caracteres digitados são substituídos por círculos. -->
+
+            <input type="password" name="" id="">
+     
+<!-- 
+        Input com type file permite que se enviem arquivos. Cria um botão que permite a seleção do arquivo. -->
+        <!-- Quando form tem método post, deve-se usar atributo enctype com valor multipart/form-data. Ele informa que a submissão de dados não consiste apenas em texto, podendo haver também arquivos.  -->
+        <form action="" method="post" enctype="multipart/form-data">
+            <p>Usuário</p>
+            <input type="text" name="user" required>
+            <p>Senha</p>
+            <input type="password" name="senha" required>
+
+
+        <!-- Tag <button></button> cria um botão. Atributo type diz o que o botão deve fazer com os dados. -->
+        <!-- Type="submit" para submeter o form para algum lugar. -->
+        <!-- Texto entre as tags é o texto que aparecerá no botão. -->
+        <!-- Botão enviar precisa estar dentro do form para que seja interpretado coretamente. -->
+            <br>
+            <button type="submit" class="" name="" id="">Enviar</button>
+        </form>
+
+    </form>
+    
+</body>
+</html>
+
+<!-- De modo geral, estes são os types que podem ser usados de acordo com a aplicação do campo input:
+button : define um botão;
+checkbox : permite que o usuário selecione ZERO ou MAIS opções de um número limitado de escolhas;
+color : campos de entrada que devem conter uma cor para selecionar;
+date : campos de entrada que devem conter uma data;
+datetime-local : campo de entrada de data e hora, sem fuso horário;
+email : campos de entrada que devem conter um endereço de e-mail;
+file : campo de seleção de arquivo e um botão "Procurar" para uploads de arquivos;
+month : permite ao usuário selecionar um mês e ano;
+number : define um campo de entrada numérico;
+password : os caracteres do campo de senha são mascarados (mostrados como asteriscos ou círculos);
+radio : permite que um usuário selecione APENAS UMA de um número limitado de opções;
+range : define um controle para inserir um número (como um controle deslizante). Intervalo padrão é de 0 a 100;
+reset : redefinirá todos os valores do formulário para seus valores padrão;
+search : usado para campos de pesquisa;
+submit : envia dados de formulário a um manipulador de formulários(especificado na action do form );
+tel : campos de entrada que devem conter um número de telefone;
+text : campo de entrada de texto de linha única;
+time : permite que o usuário selecione um horário (sem fuso horário);
+url : campos de entrada que devem conter um endereço URL;
+week : permite ao usuário selecionar uma semana e um ano. -->
+
+<!-- O valor default de um type sempre será text. Portanto, é preciso especificar de acordo com a sua necessidade. -->
+
+<!-- Como complemento, temos os atributos, que são propriedades inseridas para seus inputs HTML. Com elas, você poderá adicionar funcionalidades ao seu formulário. Temos os seguintes atributos abaixo: -->
+
+<!-- value : especifica um valor inicial para um campo de entrada;
+readonly : especifica que um campo de entrada é somente leitura;
+disabled : especifica que um campo de entrada deve ser desativado;
+size : especifica a largura visível, em caracteres, de um campo de entrada;
+maxlength : especifica o número máximo de caracteres permitidos em um campo de entrada;
+min e max : especificam os valores mínimo e máximo para um campo de entrada;
+multiple : especifica que o usuário tem permissão para inserir mais de um valor em um campo de entrada;
+pattern : especifica uma expressão regular em relação à qual o valor do campo de entrada é verificado;
+placeholder : especifica uma dica curta que descreve o valor esperado de um campo de entrada;
+required : especifica que um campo de entrada deve ser preenchido antes de enviar o formulário;
+step : especifica os intervalos de números válidos para um campo de entrada;
+autofocus : especifica que um campo de entrada deve obter foco automaticamente quando a página é carregada;
+height e width : especificam a altura e a largura de um elemento;
+autocomplete : especifica se um campo de entrada deve ter o preenchimento automático ativado ou desativado. -->
+
+<h1>Formulário</h1>
+<form action="" method="get">
+    <label for="nome-completo">Nome completo
+        <input type="text" name="nome" id="nome-completo" placeholder="Digite o seu nome" required>
+    </label>
+    <br>
+    <label for="input-email">Email
+        <input type="email" name="email" id="input-email" placeholder="Digite o seu e-mail">
+    </label>
+    <br>
+    <label for="">Estado onde você mora:
+        <select name="estado" id="input-estado">
+            <option value="sp" selected>São Paulo</option>
+            <option value="mg">Minas Gerais</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="sc">Santa Catarina</option>
+        </select>
+    </label>
+    <br>
+    <p>Selecione sua foto:</p>
+    <input type="file" name="foto" id="foto-perfil">
+    <br>
+    <p>Comidas favoritas</p>
+    <label for="comida-1">
+        <input type="radio" value="pizza" name="comida-favorita" id="comida-1" checked>Pizza
+    </label>
+    <label for="comida-2">
+        <input type="radio" value="sorvete" name="comida-favorita" id="comida-2" >Sorvete
+    </label>
+    <label for="comida-3">
+        <input type="radio" value="pão de queijo" name="comida-favorita" id="comida-3" >Pão de queijo
+    </label>
+    <label for="comida-4">
+        <input type="radio" value="outro" name="comida-favorita" id="comida-4">Outro
+    </label>
+    <br>
+    <p>Escreva algo sobre você:</p>
+    <textarea name="sobre-mim" id="text-area-mim" cols="30" rows="5"></textarea>
+    <br>
+    <p>Digite sua senha:</p>
+    <label for="input-senha">
+        <input type="password" name="senha" id="input-senha" required>
+    </label>
+    <br>
+    <label for="checkbox-noticias">
+        <input type="checkbox" name="promocoes" id="checkbox-noticias">Deseja receber notícias e promoções incríveis?
+    </label>
+    <br>
+    <button type="submit">Enviar formulário</button>
+</form>
+
+<!-- É bom começar as páginas com a seguinte configuração com o seletor universal: -->
+
+<!-- * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} -->
+
+<!-- name é uma pergunta, ao passo que value é uma resposta. Ambos são recebidos e interpretados pelo banco de dados. -->
+<!-- Botão de submit envia dados e imediatamente  atualiza a página. -->
+<!-- event.preventDefault() -> retira o comportamento padrão do formulário, que seria enviar os dados e atualizar a página. Dados sõ armazenados e página não é atualizada. -->
+
+<!-- Como vimos no vídeo acima, o método .preventDefault() previne que o comportamento padrão de um evento seja executado.  -->
+
+<!-- Esse código gera um elemento clicável que redireciona a pessoa usuária para o site da Trybe. O atributo target="_blank" indica que o comportamento do elemento é abrir o link em outra aba do navegador. -->
+
+<a href="www.betrybe.com" target="_blank" id="href">TRYBE</a>
+
+<!-- Esse código gera uma caixa de input de texto. O comportamento desse elemento é capturar o(s) caractere(s) digitado(s) pela pessoa usuária e exibi-lo(s) dentro da caixa de texto, alterando o atributo "value" do input de acordo com o que é digitado. -->
+
+<input type="text" id="input-text"/>
+
+<!-- Esse código gera um caixinha de input do tipo checkbox. O comportamento desse elemento é escutar o clique da pessoa usuária e marcar ou desmarcar a caixinha. -->
+
+<input type="checkbox" id="input-checkbox" />
