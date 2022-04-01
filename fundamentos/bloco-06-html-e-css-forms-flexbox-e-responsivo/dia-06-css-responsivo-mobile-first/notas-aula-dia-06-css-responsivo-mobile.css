@@ -1,0 +1,57 @@
+ /* Media é um técnica que permite utilizar @media para incluir um bloco de CSS se uma condição for verdadeira  */
+@media screen and (max-width: 768px) {
+    CSS code-block;
+}
+
+ /* @media é uma at-rule no CSS. At-rules são instruções condicionais para direcionar estilos a telas específicas 
+ Depois vem a especificação do tipo de mídia. O valor padrão é all. 
+ Depois vem um operador lógico -> and, ,(=or) , ou not. 
+ Depois vêm as media features -> características do viewport/página, qualidade do display, cor, interação etc.  */
+
+@media screen and (max-width 768px) {  
+    /* Quando estiver numa tela e a largura dessa tela for de até 768px */
+    body {
+        background-color: red;
+    }
+}
+
+/* Se houver um seletor abaixo que sobrescreva o código do media-query, o que estiver embaixo terá prioridade, a não ser que eu atribua o valor !important a essa regra: */
+
+@media screen and (max-width 768px) {  
+    body {
+        background-color: red !important;
+    }
+}
+
+
+@media screen and (max-width: 768px) and (min-width: 460px) {  
+    /* Condição adicional deve ser satisfeita para que bloco de código seja executado. */
+    body {
+        background-color: red !important;
+    }
+}
+
+/* É possível importar um arquivo css com uma condição pela seguinte sintaxe: */
+
+<link rel="stylesheet" href="mobile.css" media="screen and (max-width: 760px) and (min-width: 460px)">
+
+
+@media screen and (max-width: 768px) {
+    .main-header {
+        font-size: x-large;
+        padding: 5px 0;
+    }
+    
+    .bio-container {
+        flex-direction: column;
+    }
+
+    .mandela-picture {
+        height: 250px;
+        width: 250px;
+    }
+
+    .bio-info {
+        width: 80%;
+    }
+}
