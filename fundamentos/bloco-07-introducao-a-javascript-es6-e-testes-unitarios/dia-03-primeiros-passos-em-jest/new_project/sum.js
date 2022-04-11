@@ -31,30 +31,55 @@ const myFizzBuzz = (num) => {
 }
 
 const encode = (word) => {
-  let string = word.split();
-  string.forEach((character) => {
+  let array = word.split('');
+  array.forEach((character) => {
     if (character === 'a') {
-      character = 1;
+      array.splice(array.indexOf('a'), 1, 1);
     } else if 
     (character === 'e') {
-      character = 2;
+      array.splice(array.indexOf('e'), 1, 2);
     } else if
     (character === 'i') {
-      character = 3;
+      array.splice(array.indexOf('i'), 1, 3);
     } else if 
     (character === 'o') {
-      character = 4;
+      array.splice(array.indexOf('o'), 1, 4);
     } else if 
-      (character === 'i') {
-        character = 5;
-      }
-    return string;
-
-
-  })
-
-const decode = () => {
-
+      (character === 'u') {
+        array.splice(array.indexOf('u'), 1, 5);
+    } else if 
+    (character === '1') {
+      array.splice(array.indexOf('1'), 1, 'a');
+    } else if 
+    (character === '2') {
+      array.splice(array.indexOf('2'), 1, 'e');
+    } else if 
+    (character === '3') {
+      array.splice(array.indexOf('3'), 1, 'i');
+    } else if 
+    (character === '4') {
+      array.splice(array.indexOf('4'), 1, 'o');
+    } else if 
+    (character === '5') {
+      array.splice(array.indexOf('5'), 1, 'u');
+    }
+  });
+  let result = array.join('');
+  return result;
 }
+console.log(encode('aeiou'));
+console.log(encode('12345'));
 
-module.exports = {sum, myRemove, myFizzBuzz, encode, decode};
+// const decode = () => {
+
+// }
+
+module.exports = {sum, myRemove, myFizzBuzz, encode};
+
+let random = [1, 2, 3];
+random.forEach((number) => {
+  if (number === 1) {
+    random.splice(random.indexOf(1), 1, 4);
+  }
+})
+console.log(random);
