@@ -31,3 +31,4 @@ const verifyAges = (arr, minimumAge) => {
 
 console.log(verifyAges(people, 18));
 console.log(verifyAges(people, 16));
+
