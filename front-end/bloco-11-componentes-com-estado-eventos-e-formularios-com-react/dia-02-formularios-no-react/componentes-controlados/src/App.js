@@ -1,0 +1,15 @@
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import Form from './Form';
+
+class App extends React.Component {
+  render() {
+    return (
+      <Form />
+    )
+  }
+}
+  
+
+export default App;
