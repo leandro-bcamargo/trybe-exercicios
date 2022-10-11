@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "extends": [
+    "trybe-frontend"
+  ],
+  "rules": {
+    "no-underscore-dangle": "off",
+    "react/prop-types": "off"
+  }
+}
