@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  api:
+    image: node:16
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/app
+    working_dir: /usr/app
+    command: bash -c "npm install && npm start"
+
+# execute `$ docker-compose up` para iniciar o container.
