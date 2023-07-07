@@ -1,0 +1,1 @@
+contact_list.add_to_favorites("lucas")
