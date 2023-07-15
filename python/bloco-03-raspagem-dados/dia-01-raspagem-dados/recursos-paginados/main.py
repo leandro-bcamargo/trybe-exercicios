@@ -4,7 +4,7 @@ import requests
 
 # Define a primeira página como próxima a ter seu conteúdo recuperado
 URL_BASE = "http://books.toscrape.com/catalogue/"
-next_page_url = 'page-1.html'
+next_page_url = "page-1.html"
 while next_page_url:
     # Busca o conteúdo da próxima página
     response = requests.get(URL_BASE + next_page_url)
