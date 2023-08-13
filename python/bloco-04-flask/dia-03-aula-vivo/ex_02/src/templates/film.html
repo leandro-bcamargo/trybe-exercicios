@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Film Details</title>
+  </head>
+  <body>
+    {% if film %}
+    <section>
+      <h1>Title: {{film.title}}</h1>
+      <p>Year: {{film.year}}</p>
+      <p>Director: {{film.director}}</p>
+      <p>Genre: {{film.genre}}</p>
+      <img src="{{film.poster}}" alt="{{film.title}}" />
+    </section>
+    {%else%}
+    <h1>Film not found</h1>
+    {%endif%}
+  </body>
+</html>

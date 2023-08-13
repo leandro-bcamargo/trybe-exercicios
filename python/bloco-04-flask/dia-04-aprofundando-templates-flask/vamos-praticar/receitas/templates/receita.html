@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe</title>
+  </head>
+  <body>
+    <h1>{{recipe.nome}}</h1>
+    <h2>Ingredients</h2>
+    <ul>
+      {%for ingredient in recipe.ingredientes%}
+      <li>{{ingredient}}</li>
+      {%endfor%}
+    </ul>
+    {%for step in recipe.preparo | convert_to_list %}
+    <ol>
+      <li>{{loop.index}}. {{step|capitalize}}</li>
+    </ol>
+    {%endfor%}
+  </body>
+</html>
