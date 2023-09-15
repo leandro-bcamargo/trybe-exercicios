@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Recipe Details {%
+endblock %} {% block contents %} {% if recipe.image %}
+<img src="{% static recipe.image.url %}" alt="Recipe Image" />
+{%endif%}
+<h1>{{recipe.name}}</h1>
+<p><strong>Ingredientes:</strong> {recipe.ingredients}</p>
+<p><strong>Instruções:</strong> {recipe.instructions}</p>
+<p><strong>Data de Criação:</strong> {recipe.created_at}</p>
+<p><strong>Última Atualização:</strong> {recipe.updated_at}</p>
+<a href="{% url 'delete_recipe', recipe.id %}">Delete Recipe</a>
+{% endblock %}

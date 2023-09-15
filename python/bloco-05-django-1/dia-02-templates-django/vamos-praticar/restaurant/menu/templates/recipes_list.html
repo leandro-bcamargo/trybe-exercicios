@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Recipe list
+{% endblock %}
+
+{% block content %}
+    <h1>Recipe list</h1>
+    {% for recipe in recipes %}
+        {% if recipe.image %}
+            <img src="{% static recipe.image.url %}" alt="imagem da receita">
+        {%endif%}
+        <h2>{{recipe.name}}</h2>
+    {% empty %}
+        <p>No recipe found</p>
+    {%endfor%}
+{% endblock %}
