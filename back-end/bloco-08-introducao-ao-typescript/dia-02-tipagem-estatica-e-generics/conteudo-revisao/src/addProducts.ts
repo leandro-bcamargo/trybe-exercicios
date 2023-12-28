@@ -1,10 +1,6 @@
-function addProducts<Product>(products: Product[], newProduct: Product): Product[] {
+function addProducts<ProductType>(products: ProductType[], newProduct: ProductType): ProductType[] {
   return [...products, newProduct];
 }
-
-// type Product<T> = {
-//   gluten: boolean,
-// } & T;
 
 type Bread = {
   name: string,
