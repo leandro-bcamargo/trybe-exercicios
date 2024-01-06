@@ -1,0 +1,1 @@
+[{"id":1,"name":"Wolverine","specialMove":"Adamantium Claws"},{"id":2,"name":"Cyclop","specialMove":"Red beam"},{"id":3,"name":"Gambit","specialMove":"Magic cards"},{"id":4,"name":"Beast","specialMove":"Put glasses on"}]
